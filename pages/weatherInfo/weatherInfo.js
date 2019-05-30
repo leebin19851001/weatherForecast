@@ -1,18 +1,46 @@
 // pages/weatherInfo/weatherInfo.js
+var QQMapWX = require('../../libs/qqmap-wx-jssdk.js');
+
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    title: '汐说天气',
+    city: '',
+    district: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options);
+    var qqmapsdk = new QQMapWX({
+      key: 'N2YBZ-SGJCF-YLNJZ-JJO2X-IUO72-7KFJG' // 必填
+    });
+    qqmapsdk.reverseGeocoder({
+      location: {
+        latitude: options.latitude,
+        longitude: options.longitude
+      },
+      success: (res, data) => {
+        console.log(data)
 
+        this.setData({
+          city: data.reverseGeocoderSimplify.city,
+          district: data.reverseGeocoderSimplify.district
+        });
+      },
+      fail: function(error) {
+        console.error(error);
+      },
+      complete: function(res) {
+        console.log('complete' + res);
+      }
+    });
   },
 
   /**

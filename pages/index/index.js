@@ -7,7 +7,7 @@ Page({
     motto: '汐说天气',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
   },
   //事件处理函数
   bindViewTap: function() {
@@ -15,22 +15,42 @@ Page({
       url: '../logs/logs'
     })
   },
-
-  onGetUserInfo(e){
-    console.log(e);
+  getLocation() {
+    wx.getLocation({
+      type: 'gcj02',
+      success: res => {
+        let latitude = res.latitude;
+        let longitude = res.longitude;
+        wx.navigateTo({
+          url: `../weatherInfo/weatherInfo?latitude=${latitude}&longitude=${longitude}`
+        })
+      }
+    });
   },
-
   onTap() {
     console.log(1111111);
+    // let localPosition = null;
       wx.getSetting({
         success: res => {
-          console.log(res.authSetting)
           if(res.authSetting['scope.userLocation']){
-            console.log('获取地理位置权限')
+            this.getLocation();
           } else {
-            wx.authorize({
-              scope: 'scope.userLocation'
-            });
+            console.log('未获取到地理权限')
+            if (res.authSetting['scope.userLocation'] != false) {
+              wx.authorize({
+                scope: 'scope.userLocation',
+                success: () => {
+                  this.getLocation();
+                }
+              });
+            } else {
+              wx.openSetting({
+                scope: 'scope.userLocation',
+                success: (res) => {
+                  this.getLocation();
+                }
+              })
+            }
           }
         }
     })

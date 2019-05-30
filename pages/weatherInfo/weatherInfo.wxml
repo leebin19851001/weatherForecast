@@ -1,2 +1,13 @@
 <!--pages/weatherInfo/weatherInfo.wxml-->
 <!-- <text>pages/weatherInfo/weatherInfo.wxml</text> -->
+
+<view class="container">
+    <view class="container-top">
+        <text>{{title}}</text>
+    </view>
+    <view class="localcation">
+
+        <text>{{city}}{{district}}</text>
+    </view>
+</view>
+<!-- <text>{{city}}</text> -->
