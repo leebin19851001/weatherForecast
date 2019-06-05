@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "l-curWeatherInfo": "/components/curWeatherInfo/cmp",
+    "l-forecast": "/components/forecast/cmp"
+  }
 }

@@ -1,14 +1,29 @@
 /* pages/weatherInfo/weatherInfo.wxss */
+
 .container-top {
-    display: block;
     position: fixed;
     width: 100%;
-    height: 200rpx;
-    background-color: #777;
+    height: 142rpx;
+    text-align: center;
+    line-height: 142rpx;
+    color: snow;
+    font-size: 40rpx;
+    font-weight: 400;
+    letter-spacing: 5rpx;
+    background-color: rgb(25, 175, 255);
+    z-index: 99;
 }
 
-.localcation {
+.container-content {
+    padding-top: 140rpx;
+    font-size: 40rpx;
+}
+
+.forecast {
+    display: flex;
     width: 100%;
-    height: 500rpx;
-    padding-top: 300rpx;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    background-color: rgba(34, 113, 218, 1);
 }

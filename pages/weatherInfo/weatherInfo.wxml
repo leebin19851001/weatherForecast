@@ -2,12 +2,23 @@
 <!-- <text>pages/weatherInfo/weatherInfo.wxml</text> -->
 
 <view class="container">
+    <!-- <image class="container-image" src="../../images/bg.jpg"></image> -->
     <view class="container-top">
         <text>{{title}}</text>
     </view>
-    <view class="localcation">
+    <view class="container-content">
+        <l-curWeatherInfo city="{{city}}" district="{{district}}"
+                          weather-data="{{weatherData}}"></l-curWeatherInfo>
+    </view>
 
-        <text>{{city}}{{district}}</text>
+    <view class="forecast">
+        <l-forecast></l-forecast>
+        <l-forecast></l-forecast>
+        <l-forecast></l-forecast>
+        <l-forecast></l-forecast>
+        <l-forecast></l-forecast>
+        <l-forecast></l-forecast>
+        <l-forecast></l-forecast>
     </view>
 </view>
 <!-- <text>{{city}}</text> -->

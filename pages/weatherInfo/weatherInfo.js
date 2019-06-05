@@ -1,5 +1,8 @@
 // pages/weatherInfo/weatherInfo.js
 var QQMapWX = require('../../libs/qqmap-wx-jssdk.js');
+import {Request} from "../../utils/request.js";
+
+var request =new Request()
 
 
 Page({
@@ -10,7 +13,8 @@ Page({
   data: {
     title: '汐说天气',
     city: '',
-    district: ''
+    district: '',
+    weatherData: {} 
   },
 
   /**
@@ -33,14 +37,22 @@ Page({
           city: data.reverseGeocoderSimplify.city,
           district: data.reverseGeocoderSimplify.district
         });
-      },
-      fail: function(error) {
-        console.error(error);
-      },
-      complete: function(res) {
-        console.log('complete' + res);
+
+       request.getData({
+        url: '/weather?location=CN101180101&key=7afdbb48602442c3b32124b3e1f064bd', 
+         method: 'GET'
+        }).then( res => {
+          console.log(res);
+          this.setData({
+            weatherData: res
+          });
+        })
+        // console.log(weatherData)
+
       }
     });
+
+
   },
 
   /**

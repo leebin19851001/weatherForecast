@@ -1,0 +1,61 @@
+/* components/curWeatherInfo/cmp.wxss */
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 750rpx;
+    background-color: rgba(34, 113, 218, 1);
+    align-items: center;
+    padding-bottom: 120rpx;
+}
+.container-location {
+    display: block;
+    width: 100%;
+    height: 120rpx;
+    line-height: 120rpx;
+    color: snow;
+    text-align: center;
+}
+
+.air-index {
+    height: 120rpx;
+}
+
+.weatherInfo {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    color: snow;
+}
+
+.temperature {
+    font-size: 80rpx;
+    padding-bottom: 10rpx;
+}
+
+.condition {
+    font-size: 40rpx;
+    padding-bottom: 10rpx;
+}
+
+.otherInfo {
+    display: flex;
+    width:100%;
+    height: 50rpx;
+    flex-direction: column;
+    align-items: center;
+    color: snow;
+    overflow: hidden;
+    font-size: 28rpx;
+    padding-bottom: 10rpx;
+}
+
+.swiper-item {
+    text-align: center;
+}
+
+.reminder {
+    font-size: 28rpx;
+    text-align: center;
+}
+

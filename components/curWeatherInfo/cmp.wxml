@@ -1,0 +1,29 @@
+<!--components/curWeatherInfo/cmp.wxml-->
+<!-- <text>components/curWeatherInfo/cmp.wxml</text> -->
+<view class="container">
+    <view class="container-location">
+        <text>{{city}}{{district}}</text>
+    </view>
+
+    <view class="air-index"></view>
+    <view class="weatherInfo">
+        <text class="temperature">{{weatherData.now.tmp}}℃</text>
+        <text class="condition">{{weatherData.now.cond_txt}}</text>
+      
+        <swiper class="otherInfo" vertical="true" autoplay="true">
+            <swiper-item class="swiper-item">
+                    <view>风向：{{weatherData.now.wind_dir}}</view>
+            </swiper-item>
+            <swiper-item class="swiper-item">
+                    <view>风力：{{weatherData.now.wind_sc}}级</view>
+            </swiper-item>
+            <swiper-item class="swiper-item">
+                    <view>风速：{{weatherData.now.wind_spd}}公里/小时</view>
+            </swiper-item>
+        </swiper>
+    </view>
+
+    <view class="reminder">
+        <text>{{weatherData.lifestyle[0].txt}}</text>
+    </view>
+</view>

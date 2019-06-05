@@ -7,7 +7,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "transparent",
-    "navigationBarTitleText": "",
+    "navigationBarTitleText": "汐说天气",
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom" 
   },

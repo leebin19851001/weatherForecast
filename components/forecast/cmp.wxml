@@ -1,0 +1,17 @@
+<!--components/forecast/cmp.wxml-->
+
+<view class="container">
+    <view class="weekday">周三</view>
+    <view class="monthday">06月05日</view>
+
+    <view class="container-img">
+        <image class="image" src="/images/cond-icon/100.png"></image>
+    </view>
+
+    <view class="container-info">
+        <view class="template">20-30C</view>
+        <view class="cond-txt">中雨</view>
+        <view class="wind-dir">东北风</view>
+        <view class="wind-sc">5~6级</view>
+    </view>
+</view>

@@ -1,0 +1,32 @@
+/* components/forecast/cmp.wxss */
+
+.container {
+    width: 100rpx;
+    margin: 0 2rpx;
+    padding: 10rpx 0;
+    font-size: 24rpx;
+    text-align: center;
+    background-color: rgba(83, 140, 214, 0.377);
+}
+
+.container-img{
+    width: 100%;
+    height: 100rpx;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+}
+
+.weekday,
+.monthday,
+.template,
+.cond-txt,
+.wind-dir,
+.wind-sc{
+    padding: 10rpx 0;
+}
+.monthday{
+    font-size: 20rpx;
+}
