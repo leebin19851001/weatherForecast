@@ -14,7 +14,9 @@ Page({
     title: '汐说天气',
     city: '',
     district: '',
-    weatherData: {} 
+    weatherData: {},
+    dailyForecast: [],
+    lifeStyle: []
   },
 
   /**
@@ -35,16 +37,18 @@ Page({
 
         this.setData({
           city: data.reverseGeocoderSimplify.city,
-          district: data.reverseGeocoderSimplify.district
+          district: data.reverseGeocoderSimplify.district,
         });
 
        request.getData({
-        url: '/weather?location=CN101180101&key=7afdbb48602442c3b32124b3e1f064bd', 
+        url: '/weather?location=CN101110205&key=7afdbb48602442c3b32124b3e1f064bd', 
          method: 'GET'
         }).then( res => {
           console.log(res);
           this.setData({
-            weatherData: res
+            weatherData: res,
+            dailyForecast: res.daily_forecast,
+            lifeStyle: res.lifestyle
           });
         })
         // console.log(weatherData)

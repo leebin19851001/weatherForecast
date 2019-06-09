@@ -11,14 +11,18 @@
                           weather-data="{{weatherData}}"></l-curWeatherInfo>
     </view>
 
-    <view class="forecast">
-        <l-forecast></l-forecast>
-        <l-forecast></l-forecast>
-        <l-forecast></l-forecast>
-        <l-forecast></l-forecast>
-        <l-forecast></l-forecast>
-        <l-forecast></l-forecast>
-        <l-forecast></l-forecast>
-    </view>
+    <l-weatherList class="forecast" daily-forecast="{{dailyForecast}}"></l-weatherList>
+
+    <!-- <view class="forecast">
+        <l-forecast daily-forecast="{{dailyForecast}}"></l-forecast>
+    </view> -->
+    <l-lifeStyle class="lifestyle" life-style="{{lifeStyle}}"></l-lifeStyle>
+        <!-- <l-lifeStyle></l-lifeStyle>
+        <l-lifeStyle></l-lifeStyle>
+        <l-lifeStyle></l-lifeStyle>
+        <l-lifeStyle></l-lifeStyle>
+        <l-lifeStyle></l-lifeStyle>
+        <l-lifeStyle></l-lifeStyle>
+        <l-lifeStyle></l-lifeStyle> -->
 </view>
 <!-- <text>{{city}}</text> -->
